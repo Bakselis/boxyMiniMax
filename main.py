@@ -1,4 +1,4 @@
-class miniMax(object):
+class bot(object):
 
     infinity = float('inf')
     dimensions = None;
