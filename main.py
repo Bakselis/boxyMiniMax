@@ -2,14 +2,12 @@ class bot(object):
 
     infinity = float('inf')
     dimensions = None;
-    dificulty = None;
     HUMAN = -1
     COMP = +1
 
-    def __init__(self,dimensions,dificulty):
+    def __init__(self,dimensions):
         # lets create a grid to work with
         self.dimensions = dimensions
-        self.dificulty = dificulty
 
     def getFreeLines(self,movesMade):
         # will store all the lines in dictionary
@@ -83,13 +81,10 @@ class bot(object):
         if depth == 0:
             return None
 
-        if self.dificulty == 2:
-            whenToStop = depth - (totalMoves // depth) - 2
-            whenToStop = depth - 2
-        else:
-            whenToStop = depth - 1
-
-       
+        
+        whenToStop = depth - (totalMoves // depth) - 2
+        whenToStop = depth - 2
+        
         while depth-whenToStop > 4:
             whenToStop += 1
 
